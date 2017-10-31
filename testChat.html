@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+ <head>
+	<title>Чат AJAX</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="css/chat.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/chat.js" ></script>
+ </head>
+	<body onload="init()">
+	<noscript>
+		Ваш броузер не поддерживает JavaScript!!
+	</noscript>
+	<table id="content">
+		<tr>
+			<td>
+				<div id="scroll">
+				</div>
+			</td>
+			<td id="colorpicker">
+				<img src="img/palette.png" id="palette" alt="Color Palette" border="1" onclick="getColor(event);"/>
+				<br />
+				<input id="color" type="hidden" readonly="true" value="#000000" />
+				<span id="sampleText">
+					(текст будет выводиться таким цветом)
+				</span>
+			</td>
+		</tr>
+	</table>
+	<div>
+		<form action="">
+			<input type="text" id="userName" maxlength="10" size="10" onblur="checkUsername();"/>
+			<input type="text" id="messageBox" maxlength="2000" size="50" onkeydown="handleKey(event)"/>
+			<input type="button" value="Отправить" onclick="sendMessage()" />
+			<input type="button" value="Очистить" onclick="deleteMessages()" />
+		</form>
+	</div>		
+	</body>
+</html>
